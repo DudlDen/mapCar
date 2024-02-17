@@ -30,7 +30,9 @@ export function MapCars({tabHeight, carData, carListItemPress, state}: MapCarsPr
   const {carInfo, setCarInfo} = state
 
   const carInfoPress = () => {
-    if (carInfo) carListItemPress(carInfo.id)
+    if (carInfo) {
+      carListItemPress(carInfo.id)
+    }
   }
 
   return (

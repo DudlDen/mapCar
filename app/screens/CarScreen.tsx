@@ -18,7 +18,9 @@ export const CarScreen: FC<CarScreenProps> = ({navigation, route}) => {
 
   useEffect(() => {
     let data
-    if (langData) data = langData.find((item) => item.id === route.params.id)
+    if (langData) {
+      data = langData.find((item) => item.id === route.params.id)
+    }
     if (data) {
       setCarData(data)
       navigation.setOptions({
@@ -86,7 +88,6 @@ export const CarScreen: FC<CarScreenProps> = ({navigation, route}) => {
 }
 
 const $container: ViewStyle = {
-  padding: 12,
   margin: 12,
   marginBottom: 50,
 }

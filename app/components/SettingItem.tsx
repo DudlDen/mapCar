@@ -16,7 +16,9 @@ export function SettingItem({text, id}: SettingItemProps) {
     <Pressable
       style={$container}
       onPress={() => {
-        if (setLang) setLang(id)
+        if (setLang) {
+          setLang(id)
+        }
       }}
     >
       <Text style={[$text, lang === id && $textActive]}>{text}</Text>

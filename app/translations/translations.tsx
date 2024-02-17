@@ -3,7 +3,7 @@ import ru, {Translations} from "./ru"
 import en from "./en"
 import carDataRu from "../../data/cars/cars.ru.json"
 import carDataEn from "../../data/cars/cars.en.json"
-import {TCarData} from "../components/CarListItem"
+import {TCarData} from "../utils/types"
 
 const lang = {
   en: {

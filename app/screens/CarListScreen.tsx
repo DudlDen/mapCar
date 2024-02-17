@@ -36,15 +36,20 @@ export const CarListScreen: FC<CarListScreenProps> = ({navigation}) => {
 
   useEffect(() => {
     if (filter) {
-      if (langData)
+      if (langData) {
         setCarData(langData.filter((item) => item.carCategory === filterUtils(filter, lang)))
+      }
     } else {
-      if (langData) setCarData(langData)
+      if (langData) {
+        setCarData(langData)
+      }
     }
 
     if (carInfo && langData) {
       let info = langData.find((item) => item.id === carInfo.id)
-      if (info) setCarInfo(info)
+      if (info) {
+        setCarInfo(info)
+      }
     }
   }, [langData])
 
@@ -70,9 +75,12 @@ export const CarListScreen: FC<CarListScreenProps> = ({navigation}) => {
   const applyFilterPress = () => {
     let data
     let info
-    if (langData && filter)
+    if (langData && filter) {
       data = langData.filter((item) => item.carCategory === filterUtils(filter, lang))
-    if (data) setCarData(data)
+    }
+    if (data) {
+      setCarData(data)
+    }
     if (carInfo && filter && data) {
       info = data.find((item) => item.id === carInfo.id)
       if (info) {
@@ -91,7 +99,9 @@ export const CarListScreen: FC<CarListScreenProps> = ({navigation}) => {
   // функция обработки нажатия на кнопку сброса фильтра
   const resetFilterPress = () => {
     setFilter(null)
-    if (langData) setCarData(langData)
+    if (langData) {
+      setCarData(langData)
+    }
   }
 
   // функция обработки нажатия на карточку
@@ -167,7 +177,6 @@ export const CarListScreen: FC<CarListScreenProps> = ({navigation}) => {
 }
 
 const $container: ViewStyle = {
-  padding: 12,
   margin: 12,
   marginBottom: 90,
   backgroundColor: colors.gray,
